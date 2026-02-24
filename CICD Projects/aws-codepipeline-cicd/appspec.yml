@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+
+files:
+  - source: target/cicd-demo-1.0.jar
+    destination: /home/ec2-user/app
+
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+  ApplicationStart:
+    - location: scripts/start_server.sh

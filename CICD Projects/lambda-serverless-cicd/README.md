@@ -36,15 +36,26 @@ Source → CodeBuild → S3 → Lambda Deployment
 
 ---
 
-## 📸 Screenshots to Add
+## 📸 Screenshots 
 
-- CodePipeline stages
-- CodeBuild success
-- Lambda updated
-- CloudWatch logs
+![alt text](1_gDkRKAOZ9UdSF9aWEr3zLQ.png)
+
+---
+
+![alt text](1_me6gjV08zuugBja10Abpww.png)
+
+---
+
+![alt text](CrossAccountServerlessDeployment_new-1.png)
+
+---
+
+![alt text](add_approval_flow_to_aws_step_functions_codepipeline_and_eventbridge_001.png)
+
 
 ---
 
 ## 👨‍💻 Author
+
 
 <a href = "https://cinch-revamp-60906406.figma.site/"> Mr.Aniket A Firke</a>

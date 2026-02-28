@@ -36,7 +36,7 @@ GitHub → Jenkins → Terraform → AWS
 
 ---
 
-## 📸 Screenshots to Add
+## 📸 Screenshots 
 
 ![alt text](Architecture1.png)
 
@@ -55,5 +55,6 @@ GitHub → Jenkins → Terraform → AWS
 ---
 
 ## 👨‍💻 Author
+
 
 Mr.Aniket Firke

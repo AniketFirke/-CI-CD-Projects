@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+
+  build:
+    commands:
+      - echo "Installing dependencies"
+      - npm install
+      - zip -r app.zip .
+
+artifacts:
+  files:
+    - app.zip

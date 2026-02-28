@@ -46,14 +46,9 @@ appspec.yml → Deployment steps
 
 ---
 
-## ✅ Output
+## ☁️ AWS Setup – Step by Step
 
-Application runs automatically after every commit.
-
----
-
-☁️ AWS Setup – Step by Step
-1️⃣ Create CodeCommit / GitHub Repo
+## 1️⃣ Create CodeCommit / GitHub Repo
 
 Push this project:
 
@@ -62,7 +57,10 @@ git add .
 git commit -m "Initial Commit"
 git remote add origin <repo-url>
 git push -u origin main
-2️⃣ Create EC2 for Deployment
+
+---
+
+## 2️⃣ Create EC2 for Deployment
 
 Launch Amazon Linux EC2
 
@@ -76,13 +74,17 @@ sudo ./install auto
 
 Attach IAM Role → AmazonEC2RoleforAWSCodeDeploy
 
-3️⃣ Create CodeDeploy
+---
+
+## 3️⃣ Create CodeDeploy
 
 Application → EC2/On-premises
 
 Deployment group → Select EC2 tag
 
-4️⃣ Create CodeBuild
+---
+
+## 4️⃣ Create CodeBuild
 
 Environment:
 
@@ -92,7 +94,9 @@ Amazon Linux
 
 Runtime → Corretto 11
 
-5️⃣ Create CodePipeline
+---
+
+## 5️⃣ Create CodePipeline
 
 Stages:
 
@@ -102,8 +106,9 @@ Build → CodeBuild
 
 Deploy → CodeDeploy
 
+---
 
-🔄 Pipeline Flow
+## 🔄 Pipeline Flow
 
 Developer Push → GitHub
         ↓
@@ -118,5 +123,6 @@ Application Live 🎉
 ---
 
 ## 👨‍💻 Author
+
 
 Mr.Aniket Firke

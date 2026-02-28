@@ -89,7 +89,17 @@ aws ecs create-service \
 --launch-type FARGATE \
 --network-configuration "awsvpcConfiguration={subnets=[subnet-id],securityGroups=[sg-id],assignPublicIp=ENABLED}"
 ```
+---
+# 🔄 CI/CD Flow
 
+```mermaid
+flowchart TD
+    A[👨‍💻 Code Push] --> B[⚙️ GitHub Actions Triggered]
+    B --> C[🐳 Docker Build]
+    C --> D[📦 Push Image to Amazon ECR]
+    D --> E[📝 Update Task Definition]
+    E --> F[🚀 Deploy to ECS Fargate]
+```
 ---
 # 🌈 CI/CD Pipeline Overview
 
@@ -112,3 +122,4 @@ Deploy → ECS Fargate 🚀
 
 
 <a href = "https://cinch-revamp-60906406.figma.site/"> Mr. Aniket A Firke</a>
+

@@ -90,8 +90,7 @@ aws ecs create-service \
 --network-configuration "awsvpcConfiguration={subnets=[subnet-id],securityGroups=[sg-id],assignPublicIp=ENABLED}"
 ```
 ---
-# 🔄 CI/CD Flow
-
+# 🔄 CI/CD Pipeline Overview
 ```mermaid
 flowchart TD
     A[👨‍💻 Code Push] --> B[⚙️ GitHub Actions Triggered]
@@ -101,25 +100,10 @@ flowchart TD
     E --> F[🚀 Deploy to ECS Fargate]
 ```
 ---
-# 🌈 CI/CD Pipeline Overview
-
-```
-Code Push
-   ↓
-GitHub Actions
-   ↓
-Docker Build
-   ↓
-Push → Amazon ECR
-   ↓
-Update Task Definition
-   ↓
-Deploy → ECS Fargate 🚀
-```
----
 
 ## 👨‍💻 Author
 
 
 <a href = "https://cinch-revamp-60906406.figma.site/"> Mr. Aniket A Firke</a>
+
 

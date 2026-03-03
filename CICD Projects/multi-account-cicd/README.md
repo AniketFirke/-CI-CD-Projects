@@ -49,4 +49,5 @@ Management Account → Staging → Production
 
 ## 👨‍💻 Author
 
-Your Name
+
+<a href = "https://cinch-revamp-60906406.figma.site/"> Mr.Aniket A Firke</a>

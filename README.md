@@ -19,18 +19,16 @@ Welcome to the **CI/CD Projects Repository**. This repository contains 8 hands-o
 
 # 📂 File Structure Flow Chart
 
-```mermaid
 graph TD
-Root
- ├── project-1-static-site/
- ├── project-2-github-actions/
- ├── project-3-docker/
- ├── project-4-kubernetes/
- ├── project-5-terraform/
- ├── project-6-fargate/
- ├── project-7-monitoring/
- └── project-8-blue-green/
-```
+    Root[CI-CD-Projects]
+    Root --> P1[project-1-static-site]
+    Root --> P2[project-2-github-actions]
+    Root --> P3[project-3-docker]
+    Root --> P4[project-4-kubernetes]
+    Root --> P5[project-5-terraform]
+    Root --> P6[project-6-fargate]
+    Root --> P7[project-7-monitoring]
+    Root --> P8[project-8-blue-green]
 
 # 🧩 Project 1: Static Website Deployment (S3 + CloudFront)
 

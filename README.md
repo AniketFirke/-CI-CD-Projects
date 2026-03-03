@@ -1,6 +1,4 @@
 
-
-````markdown
 # 🚀 CI/CD Projects Portfolio
 
 Welcome to the **CI/CD Projects Repository** — a hands-on DevOps portfolio showcasing real-world Continuous Integration and Continuous Deployment implementations using AWS, Docker, Kubernetes, and Infrastructure as Code.

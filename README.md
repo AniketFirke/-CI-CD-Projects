@@ -197,6 +197,7 @@ Developer → Version Control → CI Build → Test → Containerize → Push �
 
 # 👨‍💻 Author
 <a href = "https://cinch-revamp-60906406.figma.site/"> Mr.Aniket A Firke</a>
+<br>
 DevOps & Cloud Engineer
 CI/CD Enthusiast
 AWS Practitioner

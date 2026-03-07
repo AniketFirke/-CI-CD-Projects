@@ -23,73 +23,79 @@ This repository demonstrates production-style deployment workflows from developm
 
 | # | Project | Core Focus |
 |---|----------|------------|
-| 1 | Static Website (S3 + CloudFront) | CDN Deployment |
-| 2 | GitHub Actions CI/CD | Automation Pipeline |
-| 3 | Dockerized App Deployment | Containerization |
-| 4 | Kubernetes Rolling Updates | Orchestration |
-| 5 | Terraform IaC | Infrastructure Automation |
-| 6 | AWS Fargate Deployment | Serverless Containers |
-| 7 | CloudWatch Monitoring | Observability |
-| 8 | Blue-Green ECS Deployment | Zero Downtime Strategy |
+| 1 | AWS CodePipeline for Automated Deployments| CI/CD pipeline using CodePipeline, CodeBuild, and CodeDeploy to automatically build and deploy applications to AWS |
+| 2 | GitHub Actions + AWS ECS (Fargate) Deployment| Automating Docker build, push to ECR, and deployment to ECS Fargate using GitHub Actions |
+| 3 | Jenkins CI/CD with Terraform on AWS| Infrastructure provisioning with Terraform and automated build/deploy pipelines using Jenkins |
+| 4 | Kubernetes GitOps with ArgoCD on AWS EKS | Continuous delivery using GitOps principles with ArgoCD managing Kubernetes deployments on EKS |
+| 5 | Lambda-Based Serverless CI/CD on AWS | Event-driven CI/CD pipeline using AWS Lambda, S3, and other serverless services |
+| 6 | Multi-Account CI/CD Pipeline with AWS CodePipeline | Secure CI/CD across multiple AWS accounts using cross-account roles and CodePipeline |
+| 7 | Containerized Deployment with AWS Fargate | Building Docker images, storing in ECR, and running containers serverlessly using ECS Fargate |
+| 8 | Blue-Green Deployment on AWS ECS| Zero-downtime deployment strategy on ECS using CodeDeploy blue-green deployment |
 
 ---
-
-# 🏗️ Project 1: Static Website Deployment (S3 + CloudFront)
+# 🏗️ Project 1: AWS CodePipeline for Automated Deployments
 
 ### 🎯 Objective
-Deploy a globally distributed static website using Amazon S3 and CloudFront CDN.
+Automate the application build and deployment process using AWS CodePipeline for continuous integration and delivery.
 
 ### 🛠️ Tools
-- Amazon S3  
-- CloudFront  
-- IAM  
+- AWS CodePipeline  
+- AWS CodeBuild  
+- AWS CodeDeploy  
+- Amazon EC2  
+- GitHub  
 
 ### 🔄 Architecture Flow
 
 ```mermaid
 flowchart LR
-    A[Developer Push Code] --> B[Upload to S3 Bucket]
-    B --> C[CloudFront Distribution]
-    C --> D[End Users Access Website]
-````
+    A[Developer Push Code] --> B[GitHub Repository]
+    B --> C[AWS CodePipeline Triggered]
+    C --> D[CodeBuild Build Stage]
+    D --> E[CodeDeploy Deploy to EC2]
+    E --> F[Application Live]
 
+```
 ---
 
-# ⚙️ Project 2: CI/CD Pipeline using GitHub Actions
+
+# ⚙️ Project 2: GitHub Actions + AWS ECS (Fargate) Deployment
 
 ### 🎯 Objective
 
-Automate build, test, and deployment workflows.
+Automate Docker build and deployment to AWS ECS Fargate using GitHub Actions.
 
 ### 🔄 Pipeline Flow
 
 ```mermaid
 flowchart LR
     A[Code Push] -->|Trigger| B[GitHub Actions]
-    B --> C[Build]
-    C --> D[Test]
-    D --> E[Deploy]
+    B --> C[Build Docker Image]
+    C --> D[Push Image to Amazon ECR]
+    D --> E[Deploy to ECS Fargate]
 
     style A fill:#ffcc00,stroke:#333
     style B fill:#00c3ff,stroke:#333
     style C fill:#28a745,stroke:#333
     style D fill:#ff5733,stroke:#333
     style E fill:#8e44ad,stroke:#333
-```
 
+```
 ---
 
-# 🐳 Project 3: Dockerized Application Deployment
+# 🐳 Project 3: Jenkins CI/CD with Terraform on AWS
 
 ### 🎯 Objective
 
-Build, package, and deploy applications using Docker containers.
+Automate infrastructure provisioning using Terraform and implement CI/CD pipelines with Jenkins on AWS.
 
 ```mermaid
 flowchart LR
-    A[Application Code] --> B[Docker Build]
-    B --> C[Docker Image]
-    C --> D[Run Container]
+    A[Developer Push Code] --> B[Jenkins Pipeline Triggered]
+    B --> C[Terraform Init & Plan]
+    C --> D[Terraform Apply]
+    D --> E[AWS Infrastructure Provisioned]
+
 ```
 
 ---

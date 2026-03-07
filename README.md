@@ -54,7 +54,6 @@ flowchart LR
     C --> D[CodeBuild Build Stage]
     D --> E[CodeDeploy Deploy to EC2]
     E --> F[Application Live]
-
 ```
 ---
 
@@ -79,7 +78,6 @@ flowchart LR
     style C fill:#28a745,stroke:#333
     style D fill:#ff5733,stroke:#333
     style E fill:#8e44ad,stroke:#333
-
 ```
 ---
 
@@ -95,7 +93,6 @@ flowchart LR
     B --> C[Terraform Init & Plan]
     C --> D[Terraform Apply]
     D --> E[AWS Infrastructure Provisioned]
-
 ```
 
 ---
@@ -112,7 +109,6 @@ flowchart LR
     B --> C[ArgoCD Detects Changes]
     C --> D[Sync to EKS Cluster]
     D --> E[Kubernetes Pods Updated]
-
 ```
 
 ---
@@ -130,7 +126,6 @@ flowchart LR
     C --> D[AWS CodePipeline]
     D --> E[Deploy to AWS Lambda]
     E --> F[Application Running]
-
 ```
 
 ---
@@ -149,7 +144,6 @@ flowchart LR
     D --> E[Deploy to Staging Account]
     E --> F[Manual Approval]
     F --> G[Deploy to Production Account]
-
 ```
 
 ---
@@ -167,7 +161,6 @@ flowchart LR
     C --> D[ECS Task Definition]
     D --> E[Fargate Launch]
     E --> F[Application Running]
-
 ```
 
 ---

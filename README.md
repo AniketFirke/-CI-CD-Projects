@@ -100,64 +100,74 @@ flowchart LR
 
 ---
 
-# ☸️ Project 4: Kubernetes Rolling Deployment
+# ☸️ Project 4: Kubernetes GitOps with ArgoCD on AWS EKS
 
 ### 🎯 Objective
 
-Implement zero-downtime rolling updates in Kubernetes.
+Implement GitOps-based continuous deployment using ArgoCD to automatically sync Kubernetes applications on AWS EKS.
 
 ```mermaid
 flowchart LR
-    A[New Image] --> B[Kubernetes Deployment]
-    B --> C[Rolling Update]
-    C --> D[Pods Updated Gradually]
+    A[Developer Push Code] --> B[GitHub Repository]
+    B --> C[ArgoCD Detects Changes]
+    C --> D[Sync to EKS Cluster]
+    D --> E[Kubernetes Pods Updated]
+
 ```
 
 ---
 
-# 🏗️ Project 5: Infrastructure as Code (Terraform)
+# 🏗️ Project 5: Lambda-Based Serverless CI/CD on AWS
 
 ### 🎯 Objective
 
-Provision and manage AWS infrastructure programmatically.
+Implement a serverless CI/CD pipeline using AWS Lambda to automate deployment workflows.
 
 ```mermaid
 flowchart LR
-    A[Terraform Code] --> B[terraform init]
-    B --> C[terraform plan]
-    C --> D[terraform apply]
-    D --> E[AWS Infrastructure Created]
+    A[Developer Push Code] --> B[GitHub / CodeCommit]
+    B --> C[EventBridge Trigger]
+    C --> D[AWS CodePipeline]
+    D --> E[Deploy to AWS Lambda]
+    E --> F[Application Running]
+
 ```
 
 ---
 
-# 🚀 Project 6: Containerized Deployment with AWS Fargate
+# 🚀 Project 6: Multi-Account CI/CD Pipeline with AWS CodePipeline
 
 ### 🎯 Objective
 
-Deploy containers without managing EC2 instances.
+Implement a secure CI/CD pipeline that deploys applications across multiple AWS accounts (Dev, Staging, Production).
 
 ```mermaid
 flowchart LR
-    A[Docker Build] --> B[Push to ECR]
-    B --> C[ECS Task Definition]
-    C --> D[Fargate Launch]
-    D --> E[Application Running]
+    A[Developer Push Code] --> B[Source Repository]
+    B --> C[AWS CodePipeline]
+    C --> D[Build in Management Account]
+    D --> E[Deploy to Staging Account]
+    E --> F[Manual Approval]
+    F --> G[Deploy to Production Account]
+
 ```
 
 ---
 
-# 📊 Project 7: Monitoring & Logging with CloudWatch
+# 📊 Project 7: Containerized Deployment with AWS Fargate
 
 ### 🎯 Objective
 
-Implement centralized logging and automated alerting.
+Deploy containerized applications on AWS Fargate without managing underlying servers.
 
 ```mermaid
 flowchart LR
-    A[Application Logs] --> B[CloudWatch Logs]
-    B --> C[Alarms]
-    C --> D[Notifications]
+    A[Application Code] --> B[Docker Build]
+    B --> C[Push Image to Amazon ECR]
+    C --> D[ECS Task Definition]
+    D --> E[Fargate Launch]
+    E --> F[Application Running]
+
 ```
 
 ---
@@ -166,13 +176,13 @@ flowchart LR
 
 ### 🎯 Objective
 
-Deploy new versions without downtime using traffic shifting.
+Deploy new application versions with zero downtime using Blue-Green deployment strategy on AWS ECS.
 
 ```mermaid
 flowchart LR
-    A[Users] --> B[ALB]
-    B --> C[Blue Environment]
-    B -.Switch Traffic.-> D[Green Environment]
+    A[Users] --> B[Application Load Balancer]
+    B --> C[Blue Environment - Current Version]
+    B -.Traffic Shift.-> D[Green Environment - New Version]
 
     style C fill:#3498db,stroke:#000,color:#fff
     style D fill:#2ecc71,stroke:#000,color:#fff
@@ -183,22 +193,40 @@ flowchart LR
 
 # 🧠 DevOps Skills Demonstrated
 
-* CI/CD Pipeline Design
-* GitHub Actions Automation
-* Docker & Containerization
-* Kubernetes Orchestration
-* AWS ECS & Fargate
-* Terraform Infrastructure as Code
-* CloudWatch Monitoring & Alerts
-* Blue-Green Deployment Strategy
-* Production-Grade Deployment Architecture
+* AWS CodePipeline for Automated Deployments
+* GitHub Actions CI/CD with AWS ECS (Fargate)
+* Jenkins CI/CD Pipeline with Terraform on AWS
+* Kubernetes GitOps Deployment using ArgoCD on AWS EKS
+* Serverless CI/CD using AWS Lambda
+* Multi-Account CI/CD Pipeline with AWS CodePipeline
+* Containerized Deployment using Docker, ECR, and AWS Fargate
+* Blue-Green Deployment Strategy on AWS ECS
 
 ---
 
 # 📌 CI/CD Master Flow
 
-Developer → Version Control → CI Build → Test → Containerize → Push → Deploy → Monitor → Rollback
+```mermaid
+flowchart LR
+    A[Developer Push Code] --> B[Version Control - GitHub]
+    B --> C[CI Pipeline Triggered]
+    C --> D[Build & Test]
+    D --> E[Docker Container Build]
+    E --> F[Push to Container Registry]
+    F --> G[Deploy to Cloud Infrastructure]
+    G --> H[Monitoring & Logging]
+    H --> I[Rollback if Failure]
 
+    style A fill:#f39c12,stroke:#333,color:#fff
+    style B fill:#3498db,stroke:#333,color:#fff
+    style C fill:#9b59b6,stroke:#333,color:#fff
+    style D fill:#1abc9c,stroke:#333,color:#fff
+    style E fill:#e67e22,stroke:#333,color:#fff
+    style F fill:#2ecc71,stroke:#333,color:#fff
+    style G fill:#16a085,stroke:#333,color:#fff
+    style H fill:#2980b9,stroke:#333,color:#fff
+    style I fill:#e74c3c,stroke:#333,color:#fff
+```
 ---
 
 # 👨‍💻 Author

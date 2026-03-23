@@ -56,15 +56,27 @@ AWS_REGION
 ECR_REPOSITORY_NAME
 ECS_CLUSTER
 ECS_SERVICE
-☁️ AWS Setup (One-Time)
-1️⃣ Create ECR Repository
+---
+## ☁️ AWS Setup (One-Time)
+
+# 1️⃣ Create ECR Repository
+
 aws ecr create-repository --repository-name my-repo
-2️⃣ Create ECS Cluster
+---
+
+# 2️⃣ Create ECS Cluster
+
 aws ecs create-cluster --cluster-name my-cluster
-3️⃣ Register Task Definition
+---
+
+# 3️⃣ Register Task Definition
+
 aws ecs register-task-definition \
 --cli-input-json file://task-definition.json
-4️⃣ Create ECS Service (Fargate)
+---
+
+# 4️⃣ Create ECS Service (Fargate)
+
 aws ecs create-service \
 --cluster my-cluster \
 --service-name my-service \
@@ -72,6 +84,8 @@ aws ecs create-service \
 --desired-count 1 \
 --launch-type FARGATE \
 --network-configuration "awsvpcConfiguration={subnets=[subnet-id],securityGroups=[sg-id],assignPublicIp=ENABLED}"
+---
+
 🔄 CI/CD Flow
 Code Push → GitHub Actions Triggered
            ↓

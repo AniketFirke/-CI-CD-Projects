@@ -38,7 +38,7 @@ Source → CodeBuild → S3 → Lambda Deployment
 
 ## 📸 Screenshots to Add
 
-CICD Projects/lambda-serverless-cicd/1_gDkRKAOZ9UdSF9aWEr3zLQ.png
+
 
 
 ---

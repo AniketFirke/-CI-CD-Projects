@@ -38,8 +38,19 @@ Source → CodeBuild → S3 → Lambda Deployment
 
 ## 📸 Screenshots to Add
 
+![alt text](<multi-region .png>)
 
+----
 
+![CICD Projects/lambda-serverless-cicd/CrossAccountServerlessDeployment_new-1.png](CrossAccountServerlessDeployment_new-1.png)
+
+----
+
+![alt text](add_approval_flow_to_aws_step_functions_codepipeline_and_eventbridge_001.png)
+
+---
+
+![alt text](1_me6gjV08zuugBja10Abpww.png)
 
 ---
 
